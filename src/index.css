@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add these styles to your existing CSS file */
+/* Add these styles to your existing CSS file */
+.particle-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Add a subtle pulse animation to the hero section */
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 30px rgba(59, 130, 246, 0);
+  }
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-light-foreground bg-light-background dark:text-dark-foreground dark:bg-dark-background transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-semibold;
+  }
+
+  /* Theme specific styles */
+  .theme-light {
+    @apply text-light-foreground bg-light-background;
+  }
+
+  .theme-dark {
+    @apply text-dark-foreground bg-dark-background;
+  }
+
+  .theme-akatsuki {
+    @apply text-akatsuki-foreground bg-akatsuki-background;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 hover:text-light-primary dark:hover:text-dark-primary;
+  }
+
+  .btn {
+    @apply px-6 py-2.5 font-medium rounded-lg transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-light-primary text-white hover:bg-light-primary/90 dark:bg-dark-primary dark:hover:bg-dark-primary/90 focus:ring-light-primary/50 dark:focus:ring-dark-primary/50;
+  }
+
+  .btn-secondary {
+    @apply bg-light-secondary text-white hover:bg-light-secondary/90 dark:bg-dark-secondary dark:hover:bg-dark-secondary/90 focus:ring-light-secondary/50 dark:focus:ring-dark-secondary/50;
+  }
+
+  .btn-outline {
+    @apply border border-light-muted bg-transparent hover:bg-light-foreground/5 dark:border-dark-muted dark:hover:bg-dark-foreground/5 focus:ring-light-muted/30 dark:focus:ring-dark-muted/30;
+  }
+
+  .section {
+    @apply py-20 px-4 md:px-8 lg:px-16 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-12 relative inline-block;
+  }
+
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-2/3 h-1 bg-light-primary dark:bg-dark-primary rounded-full;
+  }
+
+  .card {
+    @apply bg-white dark:bg-dark-background/80 rounded-xl shadow-md p-6 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-100 dark:border-gray-800;
+  }
+
+  .glass {
+    @apply bg-white/80 dark:bg-dark-background/80 backdrop-blur-md border border-white/20 dark:border-gray-800/30;
+  }
+}
