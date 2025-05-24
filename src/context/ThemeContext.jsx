@@ -20,7 +20,7 @@ const themes = {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     // Get saved theme from localStorage or default to 'light'
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || "dark";
     return savedTheme;
   });
 

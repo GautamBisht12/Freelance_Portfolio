@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  FaBriefcase,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 
 // Import experience data
-import { experienceData } from '../data/experienceData';
+import { experienceData } from "../data/experienceData";
 
 const Experience = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -21,7 +27,7 @@ const Experience = () => {
     <section id="experience" ref={ref} className="section">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
@@ -29,7 +35,7 @@ const Experience = () => {
           >
             Work Experience
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="mt-4 max-w-xl mx-auto text-light-foreground/80 dark:text-dark-foreground/80"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
@@ -52,7 +58,7 @@ const Experience = () => {
               {index !== experienceData.length - 1 && (
                 <div className="absolute left-8 top-8 bottom-0 w-0.5 bg-light-muted/30 dark:bg-dark-muted/30"></div>
               )}
-              
+
               <div className="flex gap-6">
                 {/* Timeline dot */}
                 <div className="relative z-10">
@@ -60,16 +66,20 @@ const Experience = () => {
                     <FaBriefcase className="text-xl text-light-primary dark:text-dark-primary" />
                   </div>
                 </div>
-                
+
                 <div className="card flex-1">
-                  <div 
+                  <div
                     className="flex justify-between items-start cursor-pointer"
                     onClick={() => toggleExpand(experience.id)}
                   >
                     <div>
-                      <h3 className="text-xl font-semibold">{experience.role}</h3>
-                      <h4 className="text-lg text-light-primary dark:text-dark-primary mb-2">{experience.company}</h4>
-                      
+                      <h3 className="text-xl font-semibold">
+                        {experience.role}
+                      </h3>
+                      <h4 className="text-lg text-light-primary dark:text-dark-primary mb-2">
+                        {experience.company}
+                      </h4>
+
                       <div className="flex flex-wrap gap-4 text-sm text-light-foreground/70 dark:text-dark-foreground/70">
                         <div className="flex items-center gap-1">
                           <FaCalendarAlt />
@@ -81,15 +91,22 @@ const Experience = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <button className="p-2 rounded-full hover:bg-light-foreground/5 dark:hover:bg-dark-foreground/5 transition-colors">
-                      {expandedId === experience.id ? <FaChevronUp /> : <FaChevronDown />}
+                      {expandedId === experience.id ? (
+                        <FaChevronUp />
+                      ) : (
+                        <FaChevronDown />
+                      )}
                     </button>
                   </div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     initial={false}
-                    animate={{ height: expandedId === experience.id ? 'auto' : 0, opacity: expandedId === experience.id ? 1 : 0 }}
+                    animate={{
+                      height: expandedId === experience.id ? "auto" : 0,
+                      opacity: expandedId === experience.id ? 1 : 0,
+                    }}
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
@@ -97,18 +114,20 @@ const Experience = () => {
                       <p className="mb-4 text-light-foreground/80 dark:text-dark-foreground/80">
                         {experience.description}
                       </p>
-                      
-                      <h5 className="font-semibold mb-2">Key Responsibilities:</h5>
+
+                      <h5 className="font-semibold mb-2">
+                        Key Responsibilities:
+                      </h5>
                       <ul className="list-disc pl-5 space-y-1 marker:text-light-primary dark:marker:text-dark-primary">
                         {experience.responsibilities.map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
                       </ul>
-                      
+
                       <div className="mt-4 flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
-                          <span 
-                            key={tech} 
+                          <span
+                            key={tech}
                             className="px-3 py-1 bg-light-foreground/5 dark:bg-dark-foreground/5 rounded-full text-sm font-medium"
                           >
                             {tech}
