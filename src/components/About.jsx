@@ -37,7 +37,7 @@ const About = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-center max-w-lg mx-auto">
+            <h3 className="text-2xl font-semibold mb-6 md:text-center max-w-lg mx-auto">
               I'm a{" "}
               <span className="text-light-primary dark:text-dark-primary">
                 Passionate Developer
@@ -45,7 +45,7 @@ const About = () => {
               with expertise across multiple domains
             </h3>
 
-            <p className="text-xl text-light-foreground/80 dark:text-dark-foreground/80 mb-12 text-center max-w-2xl mx-auto leading-relaxed font-semibold">
+            <p className="text-xl text-light-foreground/80 dark:text-dark-foreground/80 mb-12 md:text-center max-w-2xl mx-auto leading-relaxed font-semibold">
               Hello! I'm Gautam Bisht, a versatile developer with over 2 years
               of experience in web development. I specialize in creating
               beautiful, functional, and responsive web applications using
@@ -60,7 +60,7 @@ const About = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="flex items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                className="flex flex-col md:flex-row items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
                 tabIndex={0}
                 role="group"
                 aria-labelledby="frontend-dev-title"
@@ -90,7 +90,7 @@ const About = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 transition={{ duration: 0.3, delay: 0.5 }}
-                className="flex items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                className="flex flex-col md:flex-row items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
                 tabIndex={0}
                 role="group"
                 aria-labelledby="wordpress-dev-title"
@@ -120,7 +120,7 @@ const About = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 transition={{ duration: 0.3, delay: 0.7 }}
-                className="flex items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                className="flex flex-col md:flex-row items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
                 tabIndex={0}
                 role="group"
                 aria-labelledby="extension-dev-title"
@@ -150,7 +150,7 @@ const About = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 transition={{ duration: 0.3, delay: 0.9 }}
-                className="flex items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
+                className="flex flex-col md:flex-row items-start gap-5 p-5 rounded-xl bg-white dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-default focus:outline-none focus:ring-2 focus:ring-light-primary dark:focus:ring-dark-primary"
                 tabIndex={0}
                 role="group"
                 aria-labelledby="ai-enhanced-dev-title"
